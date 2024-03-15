@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="	https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="{{asset('css/HomeStyles.css')}}">
+@include('includes.BootstrapCss')
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2">
@@ -10,4 +9,5 @@
         </div>
     </div>
 </div>
+@include('includes.BootstrapScripts')
 

@@ -20,17 +20,20 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Layouts.LoginAndRegister');
 });
 
 Route::get('home', function(){
     $user = Auth::user();
-    return view('home', compact('user'));
+    return view('Layouts.home', compact('user'));
 })->name('home');
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+Route::get('edit-profile', function(){
+    return view('Layouts.EditProfile');
+})->name('edit-profile');
 
 Route::post('register', [RegisterController::class, 'register'])->name("register");
 Route::post('login', [RegisterController::class, 'login'])->name("login");
