@@ -1,0 +1,16 @@
+.fixed-column {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto; /* Allow scrolling */
+  }
+
+  #scrollable-content {
+    height: 100vh; /* Set a fixed height for the column */
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+  #scrollable-content::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar width */
+  }
+  
