@@ -1,4 +1,3 @@
-<section class="profile-feed">
     <div class="container">
         <div class="row">
 
@@ -20,11 +19,11 @@
                         </div><!-- dropdown -->
                         <div class="media m-0">
                             <div class="d-flex mr-3">
-                                <a href=""><img class="img-fluid rounded-circle" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="User"></a>
+                                <a href=""><img class="img-fluid rounded-circle" src={{$userInfo->photo}} alt="User"></a>
                             </div>
                             <div class="media-body">
-                                <p class="m-0">Emma Robinson</p>
-                                <small><span><i class="icon ion-md-pin"></i> London, England</span></small>
+                                <p class="m-0">{{$userInfo->firstName." ".$userInfo->lastName}}</p>
+                                <small><span><i class="icon ion-md-pin"></i> {{$userInfo->location." ".$userInfo->country}}</span></small>
                                 <small><span><i class="icon ion-md-time"></i> 1 hour ago</span></small>
                             </div>
                         </div><!-- media -->
@@ -32,9 +31,9 @@
 
                     <div class="cardbox-item">
                         <div>
-                            some text onver here....
+                            {{$post->caption}}
                         </div>
-                        <img class="img-fluid" src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg" alt="Image">
+                        <img class="img-fluid" src={{$post->photo}} alt="Image">
                     </div><!-- cardbox-item -->
                     <div class="cardbox-base">
                         <ul class="float-right">
@@ -65,4 +64,3 @@
 
         </div><!-- row -->
     </div><!-- container -->
-</section>
