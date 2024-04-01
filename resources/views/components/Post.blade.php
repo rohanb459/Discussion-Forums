@@ -24,7 +24,7 @@
                             <div class="media-body">
                                 <p class="m-0">{{$userInfo->firstName." ".$userInfo->lastName}}</p>
                                 <small><span><i class="icon ion-md-pin"></i> {{$userInfo->location." ".$userInfo->country}}</span></small>
-                                <small><span><i class="icon ion-md-time"></i> 1 hour ago</span></small>
+                                <small><span><i class="icon ion-md-time"></i> {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span></small>
                             </div>
                         </div><!-- media -->
                     </div><!-- cardbox-heading -->
