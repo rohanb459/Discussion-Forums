@@ -8,7 +8,9 @@
         <div class="col-lg-9" id="scrollable-content">
             <section class="profile-feed">
             @foreach ($posts as $post )
-                <x-post :post="$post" :userInfo="$userInfo" ></x-post>
+            {{-- <p>here is the post {{$post}}</p> --}}
+            {{-- <br> --}}
+                <x-post :post="$post" ></x-post>
             @endforeach
             </section>
         </div>

@@ -19,11 +19,11 @@
                         </div><!-- dropdown -->
                         <div class="media m-0">
                             <div class="d-flex mr-3">
-                                <a href=""><img class="img-fluid rounded-circle" src={{$userInfo->photo}} alt="User"></a>
+                                <a href=""><img class="img-fluid rounded-circle" src={{$post->user->userInfo->photo}} alt="User"></a>
                             </div>
                             <div class="media-body">
-                                <p class="m-0">{{$userInfo->firstName." ".$userInfo->lastName}}</p>
-                                <small><span><i class="icon ion-md-pin"></i> {{$userInfo->location." ".$userInfo->country}}</span></small>
+                                <p class="m-0">{{$post->user->userInfo->firstName." ".$post->user->userInfo->lastName}}</p>
+                                <small><span><i class="icon ion-md-pin"></i> {{$post->user->userInfo->location." ".$post->user->userInfo->country}}</span></small>
                                 <small><span><i class="icon ion-md-time"></i> {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span></small>
                             </div>
                         </div><!-- media -->
@@ -64,3 +64,5 @@
 
         </div><!-- row -->
     </div><!-- container -->
+
+    {{-- <p>Inside post blade{{$post->user->userInfo}}</p> --}}

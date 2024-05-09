@@ -24,12 +24,12 @@
               <fieldset>
                 <div class="avatar-upload">
                   <div class="avatar-edit">
-                      <input type='file' id="imageUpload" name="imageUpload" accept=".png, .jpg, .jpeg" required/>
+                      <input type='file' id="imageUpload" name="imageUpload" accept=".png, .jpg, .jpeg" />
                       <label for="imageUpload">
                       </label>
                   </div>
                   <div class="avatar-preview">
-                      <div id="imagePreview" style="background-image: url({{($loggedInUser!=null)?$loggedInUser->photo:'https://i.stack.imgur.com/l60Hf.png'}});">
+                      <div id="imagePreview" style="background-image: url({{$loggedInUser->photo?$loggedIn}});">
                       </div>
                   </div>
                 </div>
@@ -39,7 +39,7 @@
                   <label for="fname">First Name</label>
                 </div>
                 <div class="grid-65">
-                  <input type="text" id="fname" tabindex="1" name="firstName" required value={{($loggedInUser!=null)?$loggedInUser->firstName:''}} >
+                  <input type="text" id="fname" tabindex="1" name="firstName" value={{$loggedInUser->firstName}} />
                 </div>
               </fieldset>
               <fieldset>
@@ -47,7 +47,7 @@
                   <label for="lname">Last Name</label>
                 </div>
                 <div class="grid-65">
-                  <input type="text" id="lname" tabindex="2" name="lastName" required value={{($loggedInUser!=null)?$loggedInUser->lastName:''}} >
+                  <input type="text" id="lname" tabindex="2" name="lastName" value={{$loggedInUser->lastName}} />
                 </div>
               </fieldset>
               <!-- Description about User -->
@@ -56,7 +56,7 @@
                   <label for="description">About you</label>
                 </div>
                 <div class="grid-65">
-                  <textarea name="about" id="" cols="30" rows="auto" required tabindex="3">{{($loggedInUser!=null)?$loggedInUser->about:''}}</textarea>
+                  <textarea name="about" id="" cols="30" rows="auto" tabindex="3">{{$loggedInUser->about}}</textarea>
                 </div>
               </fieldset>
               <!-- Location -->
@@ -65,7 +65,7 @@
                   <label for="location">Location</label>
                 </div>
                 <div class="grid-65">
-                  <input type="text" id="location" tabindex="4" name="location" required value={{($loggedInUser!=null)?$loggedInUser->location: ''}} >
+                  <input type="text" id="location" tabindex="4" name="location" value={{$loggedInUser->location}} />
                 </div>
               </fieldset>
               <!-- Country -->
@@ -74,7 +74,7 @@
                   <label for="country">Country</label>
                 </div>
                 <div class="grid-65">
-                  <input type="text" id="country" tabindex="5" name="country" required value={{($loggedInUser!=null)?$loggedInUser->country:""}} >
+                  <input type="text" id="country" tabindex="5" name="country" value={{$loggedInUser->country}} />
                 </div>
               </fieldset>
               <!-- Email -->
@@ -83,7 +83,7 @@
                   <label for="email">Email Address</label>
                 </div>
                 <div class="grid-65">
-                  <input type="email" id="email" tabindex="6" name="email" required value={{$user->email}}  readonly />
+                  <input type="email" id="email" tabindex="6" name="email" value={{$loggedInUser->email}} readonly />
                 </div>
               </fieldset>
 

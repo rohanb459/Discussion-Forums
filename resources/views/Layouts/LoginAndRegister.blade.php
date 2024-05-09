@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="{{route('register')}}" method="POST">
@@ -31,7 +31,7 @@
                 <input type="password" placeholder="Confirm Password" class="password" id="password2" name="c_password">
                 <span class="password-toggle-icon"><i class="fa-solid fa-eye toggle-eye" data-target="password2"></i></span>
             </div>
-            
+
 			<button>Sign Up</button>
 		</form>
 	</div>

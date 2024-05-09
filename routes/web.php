@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LogOutController;
+use App\Http\Controllers\verifyEmailController;
+use App\Http\Controllers\verifyHomeController;
+use App\Http\Controllers\TestController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +29,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('Layouts.LoginAndRegister');
-});
+})->name('landingPage');
+
+Route::get('verify-email/{token}', [verifyEmailController::class,'verifyEmail'])->name('verifyEmail');
 
 Route::get('home', [HomeController::class,'getPosts'])->name('home');
 
@@ -35,6 +41,8 @@ Route::get('edit-profile',[EditProfileController::class, 'getInfo'] )->name('edi
 Route::post('save-changes', [EditProfileController::class, 'saveChanges'])->name('save-changes');
 
 Route::post('create-post', [CreatePostController::class,'createPost'])->name('addNewPost');
+Route::get('logout',[LogOutController::class, 'logOut'] )->name('logout');
+
 
 Route::post('register', [RegisterController::class, 'register'])->name("register");
 Route::post('login', [RegisterController::class, 'login'])->name("login");

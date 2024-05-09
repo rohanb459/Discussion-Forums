@@ -22,7 +22,7 @@
         <a href="#" class="navbar__link"><i data-feather="help-circle"></i><span>Help</span></a>
       </li>
       <li class="navbar__item">
-        <a href="#" class="navbar__link"><i data-feather="settings"></i><span>Settings</span></a>
+        <a href="{{route('logout')}}" class="navbar__link"><i data-feather="settings"></i><span>Logout</span></a>
       </li>
     </ul>
   </nav>
