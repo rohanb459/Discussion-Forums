@@ -42,4 +42,22 @@ class CreatePostController extends Controller
         $post->delete();
         redirect()->route('home');
     }
+
+    public function moveToResolve($postId)
+    {
+        $post = Post::find($postId);
+        $post->active = false;
+        $post->save();
+        // redirect()->route('home');
+        return $post->id;
+    }
+
+    public function moveToActive($postId)
+    {
+        $post=Post::find($postId);
+        $post->active=true;
+        $post->save();
+
+        return $post->id;
+    }
 }

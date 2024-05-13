@@ -10,11 +10,16 @@
 
         <div class="col-lg-9" id="scrollable-content">
             <section class="profile-feed">
-            @foreach ($posts as $post )
-            {{-- <p>here is the post {{$post}}</p> --}}
-            {{-- <br> --}}
-                <x-post :post="$post" ></x-post>
-            @endforeach
+            @if($posts->isEmpty())
+                <div class="warn-message">No Active Queries 😢</div>
+            @else
+
+                @foreach ($posts as $post )
+                {{-- <p>here is the post {{$post}}</p> --}}
+                {{-- <br> --}}
+                    <x-post :post="$post" ></x-post>
+                @endforeach
+            @endif
             </section>
         </div>
 

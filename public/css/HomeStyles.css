@@ -22,3 +22,8 @@
     margin-top: 10px;
     border-radius: 10px;
   }
+
+  .warn-message
+{
+    margin: 20%;
+}

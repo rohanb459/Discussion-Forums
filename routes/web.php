@@ -49,7 +49,6 @@ Route::post('login', [RegisterController::class, 'login'])->name("login");
 
 Route::delete('/delete/posts/{postId}', [CreatePostController::class, 'deletePost'])->name("delete-post");
 
-Route::get('/posts/resolve/{postId}', [CreatePostController::class, 'movePosts'])->name('move-post');
+Route::get('/post/move/{postId}', [CreatePostController::class, 'moveToResolve'])->name('move-post');
 
-
-
+Route::get('/posts/resolve',[HomeController::class, 'getResolvedPosts'])->name('resolved-queries');

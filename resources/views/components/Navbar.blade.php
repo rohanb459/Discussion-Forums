@@ -16,10 +16,7 @@
         <a href="{{route('edit-profile')}}" class="navbar__link"><i data-feather="user"></i><span>Profile</span></a>
       </li>
       <li class="navbar__item">
-        <a href="#" class="navbar__link"><i data-feather="archive"></i><span>Resources</span></a>
-      </li>
-      <li class="navbar__item">
-        <a href="#" class="navbar__link"><i data-feather="help-circle"></i><span>Help</span></a>
+        <a href="{{route('resolved-queries')}}" class="navbar__link"><i data-feather="archive"></i><span>Closed Queries</span></a>
       </li>
       <li class="navbar__item">
         <a href="{{route('logout')}}" class="navbar__link"><i data-feather="settings"></i><span>Logout</span></a>
