@@ -19,7 +19,7 @@
         <a href="{{route('resolved-queries')}}" class="navbar__link"><i data-feather="archive"></i><span>Closed Queries</span></a>
       </li>
       <li class="navbar__item">
-        <a href="{{route('logout')}}" class="navbar__link"><i data-feather="settings"></i><span>Logout</span></a>
+        <a href="{{route('logout')}}" class="navbar__link"><i data-feather="log-out"></i><span>Logout</span></a>
       </li>
     </ul>
   </nav>
