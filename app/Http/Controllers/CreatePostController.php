@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Post;
 
 class CreatePostController extends Controller
 {
@@ -33,5 +34,12 @@ class CreatePostController extends Controller
             "photo"=> $uploadedFileUrl
         ]);
         return redirect()->route("home")->with("success",200);
+    }
+
+    public function deletePost($postId)
+    {
+        $post = Post::find($postId);
+        $post->delete();
+        redirect()->route('home');
     }
 }

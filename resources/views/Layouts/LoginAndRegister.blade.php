@@ -15,14 +15,14 @@
 		<form action="{{route('register')}}" method="POST">
             @csrf
 			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" name="name"/>
-			<input type="email" placeholder="Email" name="email"/>
+
+
+			<input type="text" required placeholder="Name" name="name"/>
+			<input type="email" required placeholder="Email" name="email"/>
+            <select name="role" required aria-placeholder="Role">
+                <option value="user" selected>User</option>
+                <option value="admin">Admin</option>
+            </select>
             <div class="password-container">
                 <input type="password" placeholder="Password" class="password" id="password1" name="password">
                 <span class="password-toggle-icon"><i class="fa-solid fa-eye toggle-eye" data-target="password1"></i></span>
@@ -39,14 +39,13 @@
 		<form action="{{route('login')}}" method="POST">
             @csrf
 			<h1>Sign in</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" name="email" />
-			<input type="password" placeholder="Password" name="password" />
+
+			<input type="email" required placeholder="Email" name="email" />
+			<input type="password" required placeholder="Password" name="password" />
+            <select name="role" required aria-placeholder="Role">
+                <option value="admin">Admin</option>
+                <option value="user" selected>User</option>
+            </select>
 			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
 		</form>

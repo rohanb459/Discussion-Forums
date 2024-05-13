@@ -43,7 +43,8 @@ class RegisterController extends BaseController
                 'name'=>'required',
                 'email'=> 'required|email',
                 'password'=> 'required',
-                'c_password'=> 'required|same:password'
+                'c_password'=> 'required|same:password',
+                'role'=> 'required'
             ]);
 
             if($validator -> fails())
@@ -68,6 +69,9 @@ class RegisterController extends BaseController
 
         if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password])){
             $user = Auth::user();
+            if($user->role != $request->role)
+            return "Not authorized as ".$request->role;
+
             $success['token'] = $user->createToken('token')->accessToken;
             $success['name'] = $user->name;
 

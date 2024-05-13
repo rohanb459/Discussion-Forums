@@ -14,6 +14,6 @@ class HomeController extends Controller
         $userInfo = $user->UserInfo;
         $posts = Post::orderBy("created_at","desc")->with("User.userInfo")->get();
         // return $posts;
-        return view("Layouts.home", compact('posts'));
+        return view("Layouts.home", compact('posts', 'user'));
     }
 }

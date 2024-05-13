@@ -2,6 +2,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2">
+            <div class="green-box">
+                <h4>{{$user->role}}</h4>
+            </div>
             <x-navbar></x-navbar>
         </div>
 

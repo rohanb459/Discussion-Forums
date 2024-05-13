@@ -7,16 +7,7 @@
 
                     <div class="cardbox-heading">
                         <!-- START dropdown-->
-                        <div class="dropdown float-right">
-                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown" aria-expanded="false">
-                                <em class="fa fa-ellipsis-h"></em>
-                            </button>
-                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu" style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                <a class="dropdown-item" href="#">Hide post</a>
-                                <a class="dropdown-item" href="#">Stop following</a>
-                                <a class="dropdown-item" href="#">Report</a>
-                            </div>
-                        </div><!-- dropdown -->
+
                         <div class="media m-0">
                             <div class="d-flex mr-3">
                                 <a href=""><img class="img-fluid rounded-circle" src={{$post->user->userInfo->photo}} alt="User"></a>
@@ -36,26 +27,10 @@
                         <img class="img-fluid" src={{$post->photo}} alt="Image">
                     </div><!-- cardbox-item -->
                     <div class="cardbox-base">
-                        <ul class="float-right">
-                            <li><a><i class="fa fa-comments"></i></a></li>
-                            <li><a><em class="mr-5">46</em></a></li>
-                            <li><a><i class="fa fa-share-alt"></i></a></li>
-
-                        </ul>
-                        <ul>
-                            <li><a><i class="fa fa-thumbs-up"></i></a></li>
-                            <li><a><span>242 Likes</span></a></li>
-                        </ul>
+                        <button class="del-button" data-post-id="{{$post->id}}" id="del-button">Delete</button>
+                        <button class="res-button" data-post-id="{{$post->id}}" id="res-button">Resolve </button>
                     </div><!-- cardbox-base -->
-                    <div class="cardbox-comments">
-                        <span class="comment-avatar float-left">
-                            <a href=""><img class="rounded-circle" src="https://images.pexels.com/photos/2811087/pexels-photo-2811087.jpeg" alt="..."></a>
-                        </span>
-                        <div class="search">
-                            <input placeholder="Write a comment" type="text">
-                            <button><i class="fa fa-camera"></i></button>
-                        </div><!-- Search -->
-                    </div><!-- cardbox-like -->
+
 
                 </div><!-- cardbox -->
 
@@ -64,5 +39,47 @@
 
         </div><!-- row -->
     </div><!-- container -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all delete buttons
+            var deleteButton = document.getElementById('del-button');
+            // Attach click event listener to each delete button
+                deleteButton.addEventListener('click', function(event) {
+
+                    // Retrieve the post ID associated with the clicked button
+                    var postId = deleteButton.getAttribute('data-post-id');
+                    console.log(postId)
+                    // Confirm deletion with user (optional)
+                    // var confirmDelete = confirm('Are you sure you want to delete this post?');
+                    confirmDelete = true
+                    if (confirmDelete) {
+                        // Send an AJAX request to delete the specific post
+                        fetch(`/delete/posts/${postId}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            }
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                console.log('Post deleted successfully');
+                                // Optionally, update UI (remove post from DOM, etc.)
+                                // Example: deleteButton.closest('.cardbox').remove();
+                            } else {
+                                console.error('Failed to delete post');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error occurred:', error);
+                        });
+                    }
+                });
+            });
+        
+    </script>
+
+
 
     {{-- <p>Inside post blade{{$post->user->userInfo}}</p> --}}

@@ -47,8 +47,9 @@ Route::get('logout',[LogOutController::class, 'logOut'] )->name('logout');
 Route::post('register', [RegisterController::class, 'register'])->name("register");
 Route::post('login', [RegisterController::class, 'login'])->name("login");
 
+Route::delete('/delete/posts/{postId}', [CreatePostController::class, 'deletePost'])->name("delete-post");
 
-
+Route::get('/posts/resolve/{postId}', [CreatePostController::class, 'movePosts'])->name('move-post');
 
 
 

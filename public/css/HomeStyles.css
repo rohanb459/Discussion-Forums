@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    overflow-y: auto; /* Allow scrolling */
+    overflow-y: none; /* Allow scrolling */
   }
 
   #scrollable-content {
@@ -13,4 +13,12 @@
   #scrollable-content::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar width */
   }
-  
+  .green-box{
+    background-color: rgb(22, 209, 22);
+    height: 60px;
+    margin: 0px;
+    color: white;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
