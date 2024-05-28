@@ -72,7 +72,7 @@ class RegisterController extends BaseController
             if($user->role != $request->role)
             return "Not authorized as ".$request->role;
 
-            $success['token'] = $user->createToken('token')->accessToken;
+            // $success['token'] = $user->createToken('token')->accessToken;
             $success['name'] = $user->name;
 
             if($user->is_verified == false)
