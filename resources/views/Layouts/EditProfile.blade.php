@@ -24,7 +24,7 @@
               <fieldset>
                 <div class="avatar-upload">
                   <div class="avatar-edit">
-                      <input type='file' id="imageUpload" name="imageUpload" accept=".png, .jpg, .jpeg" />
+                      <input type='file' id="imageUpload" name="imageUpload" accept=".png, .jpg, .jpeg" required/>
                       <label for="imageUpload">
                       </label>
                   </div>
