@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\User_Info;
+use App\Models\Userinfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,7 +34,7 @@ class EditProfileController extends Controller
         $userInfo = $user->userInfo;
         if($userInfo==null)
         {
-            $userInfo = new User_Info();
+            $userInfo = new Userinfo();
             $userInfo->firstName = $req->firstName;
             $userInfo->lastName = $req->lastName;
             // $userInfo->email = $req->email;
@@ -43,7 +43,7 @@ class EditProfileController extends Controller
             $userInfo->country = $req->country;
             $userInfo->about = $req->about;
             // dd($user);
-            $user->userInfo()->save($userInfo);
+            $user->Userinfo()->save($userInfo);
         }
         else
         {

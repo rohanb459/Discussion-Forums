@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $user=Auth::user();
         $userInfo = $user->UserInfo;
-        $posts = Post::where('active', true)->orderBy("created_at","desc")->with("User.userInfo")->get();
+        $posts = Post::where('active', true)->orderBy("created_at","desc")->get();
         return view("Layouts.home", compact('posts', 'user', ));
     }
 
