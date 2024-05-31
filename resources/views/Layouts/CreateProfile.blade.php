@@ -39,7 +39,7 @@
                   <label for="fname">First Name</label>
                 </div>
                 <div class="grid-65">
-                  <input type="text" id="fname" tabindex="1" name="firstName" value={{$loggedInUser->firstName}} />
+                  <input type="text" id="fname" tabindex="1" name="firstName" value={{$loggedInUser->firstName}} required/>
                 </div>
               </fieldset>
               <fieldset>
@@ -47,7 +47,7 @@
                   <label for="lname">Last Name</label>
                 </div>
                 <div class="grid-65">
-                  <input type="text" id="lname" tabindex="2" name="lastName" value={{$loggedInUser->lastName}} />
+                  <input type="text" id="lname" tabindex="2" name="lastName" value={{$loggedInUser->lastName}} required/>
                 </div>
               </fieldset>
               <!-- Description about User -->
@@ -65,7 +65,7 @@
                   <label for="location">Location</label>
                 </div>
                 <div class="grid-65">
-                  <input type="text" id="location" tabindex="4" name="location" value={{$loggedInUser->location}} />
+                  <input type="text" id="location" tabindex="4" name="location" value={{$loggedInUser->location}} required />
                 </div>
               </fieldset>
               <!-- Country -->
@@ -74,7 +74,7 @@
                   <label for="country">Country</label>
                 </div>
                 <div class="grid-65">
-                  <input type="text" id="country" tabindex="5" name="country" value={{$loggedInUser->country}} />
+                  <input type="text" id="country" tabindex="5" name="country" value={{$loggedInUser->country}} required/>
                 </div>
               </fieldset>
               <!-- Email -->
