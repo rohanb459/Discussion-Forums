@@ -8,7 +8,7 @@
         </ul>
     </div>
 @endif
-<link rel="stylesheet" href="{{asset('css/EditProfileStyles.css')}}">
+<link rel="stylesheet" href="{{secure_asset('css/EditProfileStyles.css')}}">
 <div class="container-fluid">
   <div class="row">
       <div class="col-lg-2">
@@ -98,7 +98,7 @@
   </div>
 </div>
   @include('includes.BootstrapScripts')
-  <script src="{{asset('js/EditProfile.js')}}"></script>
+  <script src="{{secure_asset('js/EditProfile.js')}}"></script>
   {{-- <script>
 
     //paste here your copied configuration code
